@@ -11,7 +11,7 @@ const GuaranteesSection = () => {
     {
       number: 2,
       title: "Resultados ou Dinheiro de Volta + Bônus",
-      text: "Você tem 60 dias para testar o sistema. Se sua taxa de conversão não aumentar pelo menos 30%, devolvemos 100% do seu investimento.",
+      text: "Você tem 60 dias para ver os primeiros resultados. Se sua taxa de conversão não aumentar pelo menos 20%, devolvemos 100% do seu investimento.",
       subtext: "Sem perguntas. Sem justificativas. Sem burocracia.",
     },
     {
