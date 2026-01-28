@@ -2,13 +2,9 @@ import { useState, useEffect } from "react";
 import { MessageCircle, ArrowRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { WHATSAPP_CONFIG } from "@/lib/constants";
 
-// Noble Company WhatsApp Configuration
-const WHATSAPP_NUMBER = "553591101380";
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Olá Noble Company! Vi o site sobre os Agentes de IA para advocacia e gostaria de falar com um especialista sobre como captar mais clientes qualificados."
-);
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
+const WHATSAPP_LINK = WHATSAPP_CONFIG.getLink('default');
 
 const FloatingCTA = () => {
   const [isVisible, setIsVisible] = useState(false);

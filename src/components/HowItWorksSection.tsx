@@ -1,11 +1,7 @@
 import { ArrowDown, MessageCircle, Zap, Brain, Calendar, Bell, User, Briefcase, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-
-const WHATSAPP_NUMBER = "553591101380";
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Olá Noble Company! Quero entender melhor como o processo funciona. Pode me explicar?"
-);
+import { WHATSAPP_CONFIG } from "@/lib/constants";
 
 const HowItWorksSection = () => {
   const clientSteps = [
@@ -276,7 +272,7 @@ const HowItWorksSection = () => {
             Você só aparece para a parte boa: <span className="text-warning">fechar o cliente</span>.
           </p>
           <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
+            href={WHATSAPP_CONFIG.getLink('default')}
             target="_blank"
             rel="noopener noreferrer"
           >

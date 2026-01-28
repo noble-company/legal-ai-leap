@@ -1,11 +1,7 @@
 import { TrendingUp, Clock, DollarSign, Sparkles, Target, CheckCircle2, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-
-const WHATSAPP_NUMBER = "553591101380";
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Olá Noble Company! Vi os resultados tangíveis que o sistema entrega. Quero saber como implementar!"
-);
+import { WhatsAppCTAButton } from "./WhatsAppCTAButton";
+import { WHATSAPP_CONFIG } from "@/lib/constants";
 
 const TangibleBenefitsSection = () => {
   const benefits = [
@@ -229,19 +225,14 @@ const TangibleBenefitsSection = () => {
           <p className="text-2xl font-black text-white md:text-3xl lg:text-4xl mb-8">
             <span className="text-success">Resultado:</span> +250% de conversão | +R$ 420k/ano | <span className="text-warning">15 horas/semana</span> recuperadas
           </p>
-          <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <WhatsAppCTAButton 
+            messageKey="benefits"
+            variant="default"
+            className="h-14 px-8 text-lg font-bold"
           >
-            <Button
-              size="lg"
-              className="btn-noble h-14 px-8 text-lg font-bold"
-            >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              QUERO ESSES RESULTADOS TAMBÉM
-            </Button>
-          </a>
+            <MessageCircle className="mr-2 h-5 w-5" />
+            QUERO ESSES RESULTADOS TAMBÉM
+          </WhatsAppCTAButton>
         </motion.div>
       </div>
     </section>

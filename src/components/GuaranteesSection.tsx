@@ -1,11 +1,8 @@
 import { Shield, Lock, Award, MessageCircle, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import { Button } from "./ui/button";
-
-const WHATSAPP_NUMBER = "553591101380";
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Olá! Vi a página sobre IA para advogados e quero conhecer as garantias triplas. Pode me explicar melhor?"
-);
+import { WhatsAppCTAButton } from "./WhatsAppCTAButton";
+import { WHATSAPP_CONFIG } from "@/lib/constants";
+import { createIndexedVariant } from "@/lib/animations";
 
 const GuaranteesSection = () => {
   const guarantees = [
@@ -49,7 +46,7 @@ const GuaranteesSection = () => {
       transition: {
         duration: 0.6,
         delay: i * 0.15,
-        ease: [0.16, 1, 0.3, 1],
+
       },
     }),
   };
@@ -189,19 +186,14 @@ const GuaranteesSection = () => {
             <p className="mb-4 text-xl font-semibold text-white">
               Pronto para começar sem riscos?
             </p>
-            <Button
-              size="lg"
-              className="group relative overflow-hidden bg-success text-white hover:bg-success/90"
-              onClick={() =>
-                window.open(
-                  `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`,
-                  "_blank"
-                )
-              }
+            <WhatsAppCTAButton 
+              messageKey="guarantees"
+              variant="default"
+              className="bg-success text-white hover:bg-success/90"
             >
-              <MessageCircle className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
+              <MessageCircle className="mr-2 h-5 w-5" />
               Falar com Especialista no WhatsApp
-            </Button>
+            </WhatsAppCTAButton>
           </motion.div>
         </motion.div>
       </div>

@@ -1,12 +1,8 @@
 import { ArrowRight, Check, Sparkles, Zap, Clock, Brain, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-
-// Noble Company WhatsApp Configuration
-const WHATSAPP_NUMBER = "553591101380";
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Olá Noble Company! Vi a demonstração do Assistente de IA em ação e quero saber como ele pode ajudar meu escritório a captar mais clientes!"
-);
+import { WHATSAPP_CONFIG } from "@/lib/constants";
+import { staggerContainerVariants, fadeInLeftVariants } from "@/lib/animations";
 
 const SolutionPresentationSection = () => {
   const benefits = [
@@ -69,27 +65,6 @@ const SolutionPresentationSection = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   const messageVariants = {
     hidden: { opacity: 0, y: 20, scale: 0.95 },
     visible: (index: number) => ({
@@ -99,7 +74,6 @@ const SolutionPresentationSection = () => {
       transition: {
         delay: index * 0.2,
         duration: 0.4,
-
       },
     }),
   };
@@ -147,7 +121,7 @@ const SolutionPresentationSection = () => {
 
         {/* Benefits List */}
         <motion.div
-          variants={containerVariants}
+          variants={staggerContainerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -158,7 +132,7 @@ const SolutionPresentationSection = () => {
             return (
               <motion.div
                 key={index}
-                variants={itemVariants}
+                variants={fadeInLeftVariants}
                 whileHover={{ x: 10 }}
                 className="group flex items-start gap-4 rounded-xl bg-white/5 p-4 backdrop-blur-sm border border-white/10 transition-all hover:bg-white/10 hover:border-accent/50 shadow-lg"
               >
@@ -296,7 +270,7 @@ const SolutionPresentationSection = () => {
             className="mt-8 text-center"
           >
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
+              href={WHATSAPP_CONFIG.getLink('solution')}
               target="_blank"
               rel="noopener noreferrer"
             >

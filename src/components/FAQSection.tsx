@@ -6,12 +6,8 @@ import {
 } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
 import { MessageCircle, HelpCircle, CheckCircle2 } from "lucide-react";
-import { Button } from "./ui/button";
-
-const WHATSAPP_NUMBER = "553591101380";
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Olá! Vi a página sobre IA para advogados e tenho algumas dúvidas. Pode me ajudar?"
-);
+import { WhatsAppCTAButton } from "./WhatsAppCTAButton";
+import { WHATSAPP_CONFIG } from "@/lib/constants";
 
 const FAQSection = () => {
   const faqs = [
@@ -139,19 +135,14 @@ const FAQSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button
-                size="lg"
-                className="group h-auto bg-white px-8 py-4 text-lg font-bold text-noble-purple shadow-xl transition-all duration-300 hover:bg-gray-100 md:text-xl"
-                onClick={() =>
-                  window.open(
-                    `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`,
-                    "_blank"
-                  )
-                }
+              <WhatsAppCTAButton 
+                messageKey="faq"
+                variant="default"
+                className="h-auto bg-white px-8 py-4 text-lg font-bold text-noble-purple hover:bg-gray-100 md:text-xl"
               >
-                <MessageCircle className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
+                <MessageCircle className="mr-2 h-5 w-5" />
                 Tirar Dúvidas no WhatsApp
-              </Button>
+              </WhatsAppCTAButton>
             </motion.div>
           </div>
         </motion.div>

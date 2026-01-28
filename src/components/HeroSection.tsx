@@ -1,13 +1,7 @@
-import { Check, ArrowRight, Star, Shield } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Check, Star, Shield } from "lucide-react";
 import WhatsAppMockup from "./WhatsAppMockup";
-
-// Noble Company WhatsApp Configuration
-const WHATSAPP_NUMBER = "553591101380";
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Olá Noble Company! Vi a apresentação sobre os Agentes de IA para advocacia e gostaria de saber mais sobre como posso captar mais clientes qualificados."
-);
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
+import { WhatsAppCTAButton } from "./WhatsAppCTAButton";
+import { WHATSAPP_CONFIG } from "@/lib/constants";
 
 const HeroSection = () => {
   const benefits = [
@@ -73,15 +67,11 @@ const HeroSection = () => {
 
             {/* CTA Button */}
             <div className="mt-10 flex flex-col items-center gap-4 lg:items-start">
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                <Button 
-                  size="lg" 
-                  className="group h-14 bg-green-800 px-8 text-lg font-bold text-white shadow-lg transition-all hover:bg-green-700 hover:scale-105"
-                >
-                  QUERO CAPTAR MAIS CLIENTES
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </a>
+              <WhatsAppCTAButton 
+                messageKey="hero"
+                variant="hero"
+                className="h-14 px-8 text-lg font-bold"
+              />
               
               <p className="text-sm text-primary-foreground/70">
                 👇 Agende uma demonstração gratuita de 15min e veja funcionando ao vivo

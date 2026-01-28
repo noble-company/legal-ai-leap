@@ -1,5 +1,6 @@
 import { Clock, Target, Calendar, Check, Zap, Brain, Shield } from "lucide-react";
 import { motion } from "framer-motion";
+import { staggerContainerSlowVariants, fadeInUpVariants } from "@/lib/animations";
 
 const ThreePillarsSection = () => {
   const pillars = [
@@ -47,28 +48,6 @@ const ThreePillarsSection = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-
-      },
-    },
-  };
-
   return (
     <section className="relative bg-gradient-to-b from-background via-muted/20 to-background py-20 md:py-32">
       {/* Decorative Elements */}
@@ -102,7 +81,7 @@ const ThreePillarsSection = () => {
 
         {/* Cards Grid */}
         <motion.div
-          variants={containerVariants}
+          variants={staggerContainerSlowVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -113,7 +92,7 @@ const ThreePillarsSection = () => {
             return (
               <motion.div
                 key={index}
-                variants={cardVariants}
+                variants={fadeInUpVariants}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
                 className="group relative overflow-hidden rounded-3xl border-2 border-border bg-card p-8 shadow-lg hover:border-accent/50 hover:shadow-2xl transition-all duration-300"
               >

@@ -1,5 +1,6 @@
 import { X, Check, AlertCircle, TrendingDown, Clock, DollarSign, Zap } from "lucide-react";
 import { motion } from "framer-motion";
+import { staggerContainerFastVariants, fadeInLeftVariants } from "@/lib/animations";
 
 const PainPointsSection = () => {
   const painPoints = [
@@ -64,27 +65,6 @@ const PainPointsSection = () => {
     média: "border-muted-foreground/30 bg-muted/30 hover:bg-muted/50",
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
     <section className="relative bg-gradient-to-b from-background to-muted/30 py-20 md:py-32">
       <div className="container mx-auto px-4">
@@ -113,7 +93,7 @@ const PainPointsSection = () => {
 
         {/* Pain Points List */}
         <motion.div
-          variants={containerVariants}
+          variants={staggerContainerFastVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -122,7 +102,7 @@ const PainPointsSection = () => {
           {painPoints.map((pain, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
+              variants={fadeInLeftVariants}
               whileHover={{ x: 5 }}
               className={`group flex items-start gap-4 rounded-xl border-2 p-6 transition-all duration-300 ${
                 impactColors[pain.impact as keyof typeof impactColors]
@@ -196,7 +176,7 @@ const PainPointsSection = () => {
 
           {/* Solutions List */}
           <motion.div
-            variants={containerVariants}
+            variants={staggerContainerFastVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -205,7 +185,7 @@ const PainPointsSection = () => {
             {solutions.map((solution, index) => (
               <motion.div
                 key={index}
-                variants={itemVariants}
+                variants={fadeInLeftVariants}
                 whileHover={{ scale: 1.02 }}
                 className="flex items-center gap-4 rounded-xl bg-success/10 border-2 border-success/30 px-6 py-4 text-left shadow-md hover:shadow-lg transition-all"
               >

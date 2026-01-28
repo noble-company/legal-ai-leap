@@ -1,12 +1,8 @@
 import { Quote, Play, Star, TrendingUp, Users, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-
-// Noble Company WhatsApp Configuration
-const WHATSAPP_NUMBER = "553591101380";
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Olá Noble Company! Vi os depoimentos de outros escritórios e gostaria de saber como posso ter resultados semelhantes."
-);
+import { WHATSAPP_CONFIG } from "@/lib/constants";
+import { staggerContainerSlowVariants, fadeInUpVariants } from "@/lib/animations";
 
 const SocialProofSection = () => {
   const testimonials = [
@@ -63,27 +59,6 @@ const SocialProofSection = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
-
   return (
     <section className="relative bg-gradient-to-b from-muted/30 via-background to-muted/30 py-20 md:py-32">
       {/* Decorative Elements */}
@@ -118,7 +93,7 @@ const SocialProofSection = () => {
 
         {/* Testimonials Grid */}
         <motion.div
-          variants={containerVariants}
+          variants={staggerContainerSlowVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -127,7 +102,7 @@ const SocialProofSection = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
+              variants={fadeInUpVariants}
               whileHover={{ y: -8 }}
               className="group relative flex flex-col rounded-2xl bg-card border-2 border-border p-8 shadow-lg hover:border-accent/50 hover:shadow-2xl transition-all duration-300"
             >
@@ -238,7 +213,7 @@ const SocialProofSection = () => {
             Quer resultados como estes para seu escritório?
           </p>
           <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
+            href={WHATSAPP_CONFIG.getLink('testimonials')}
             target="_blank"
             rel="noopener noreferrer"
           >

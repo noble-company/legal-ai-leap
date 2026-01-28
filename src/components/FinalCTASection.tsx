@@ -1,14 +1,10 @@
 import { Check, ArrowRight, Clock, Users, TrendingUp, AlertCircle, MessageCircle, Zap, Shield } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { WhatsAppCTAButton } from "./WhatsAppCTAButton";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { WHATSAPP_CONFIG } from "@/lib/constants";
 
-// Configure your WhatsApp number here
-const WHATSAPP_NUMBER = "553591101380";
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Olá! Vi a página sobre IA para advogados e quero garantir minha vaga para implementação este mês!"
-);
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
+const WHATSAPP_LINK = WHATSAPP_CONFIG.getLink('finalCta');
 
 const FinalCTASection = () => {
   // Countdown timer to end of month
@@ -204,20 +200,11 @@ const FinalCTASection = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mb-12 text-center"
         >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Button
-              onClick={() => window.open(WHATSAPP_LINK, "_blank")}
-              size="lg"
-              className="group h-auto bg-gradient-noble px-8 py-6 text-xl font-bold text-white shadow-2xl transition-all duration-300 hover:shadow-accent/50 md:px-12 md:py-8 md:text-2xl"
-            >
-              <MessageCircle className="mr-2 h-6 w-6 transition-transform group-hover:scale-110" />
-              GARANTIR MINHA VAGA AGORA
-              <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </motion.div>
+          <WhatsAppCTAButton
+            messageKey="finalCta"
+            variant="hero"
+            size="lg"
+          />
           <p className="mt-4 text-sm text-gray-300">
             Clique para falar direto no WhatsApp • Resposta em minutos
           </p>
@@ -309,20 +296,11 @@ const FinalCTASection = () => {
             <p className="mb-6 text-xl text-gray-200">
               Não deixe para depois. As vagas estão acabando.
             </p>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button
-                onClick={() => window.open(WHATSAPP_LINK, "_blank")}
-                size="lg"
-                className="group mb-4 h-auto bg-white px-8 py-6 text-xl font-bold text-noble-purple shadow-2xl transition-all duration-300 hover:bg-gray-100 md:px-12 md:py-8 md:text-2xl"
-              >
-                <MessageCircle className="mr-2 h-6 w-6 transition-transform group-hover:scale-110" />
-                FALAR NO WHATSAPP AGORA
-                <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </motion.div>
+            <WhatsAppCTAButton
+              messageKey="finalCta"
+              variant="default"
+              size="lg"
+            />
             <motion.p
               animate={{ opacity: [1, 0.5, 1] }}
               transition={{ duration: 2, repeat: Infinity }}

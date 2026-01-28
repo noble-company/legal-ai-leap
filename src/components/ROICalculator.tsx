@@ -4,9 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-
-// Noble Company WhatsApp Configuration
-const WHATSAPP_NUMBER = "553591101380";
+import { WHATSAPP_CONFIG } from "@/lib/constants";
 
 const ROICalculator = () => {
   const [leadsPerMonth, setLeadsPerMonth] = useState(10);
@@ -26,10 +24,8 @@ const ROICalculator = () => {
   const roi = ((yearlyGain / 3588) * 100).toFixed(0); // Cost: R$ 299/month = R$ 3,588/year
 
   const handleWhatsAppContact = () => {
-    const message = encodeURIComponent(
-      `Olá Noble Company! Calculei meu ROI e descobri que estou perdendo R$ ${monthlyLoss.toLocaleString('pt-BR')} por mês (R$ ${yearlyLoss.toLocaleString('pt-BR')} por ano). Gostaria de saber como o Assistente de IA pode me ajudar a recuperar esses clientes!`
-    );
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
+    const message = `Olá Noble Company! Calculei meu ROI e descobri que estou perdendo R$ ${monthlyLoss.toLocaleString('pt-BR')} por mês (R$ ${yearlyLoss.toLocaleString('pt-BR')} por ano). Gostaria de saber como o Assistente de IA pode me ajudar a recuperar esses clientes!`;
+    window.open(`https://wa.me/${WHATSAPP_CONFIG.number}?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (
