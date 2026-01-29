@@ -126,7 +126,7 @@ const FAQSection = () => {
             <p className="mb-5 sm:mb-6 text-base sm:text-lg text-gray-100">
               Fale direto com nosso time no WhatsApp. Respondemos em minutos.
             </p>
-            <div className="w-full sm:w-auto">
+            <div className="flex justify-center">
               <a
                 href={WHATSAPP_CONFIG.getLink('faq')}
                 target="_blank"
