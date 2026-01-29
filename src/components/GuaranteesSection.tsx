@@ -186,7 +186,7 @@ const GuaranteesSection = () => {
             <p className="mb-4 text-xl font-semibold text-white">
               Pronto para começar sem riscos?
             </p>
-            <div className="w-full sm:w-auto">
+            <div className="flex justify-center">
               <a
                 href={WHATSAPP_CONFIG.getLink('guarantees')}
                 target="_blank"

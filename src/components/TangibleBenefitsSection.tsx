@@ -225,7 +225,7 @@ const TangibleBenefitsSection = () => {
           <p className="text-2xl font-black text-white md:text-3xl lg:text-4xl mb-8">
             <span className="text-success">Resultado:</span> +250% de conversão | +R$ 420k/ano | <span className="text-warning">15 horas/semana</span> recuperadas
           </p>
-          <div className="w-full sm:w-auto">
+          <div className="flex justify-center">
             <a
               href={WHATSAPP_CONFIG.getLink('benefits')}
               target="_blank"

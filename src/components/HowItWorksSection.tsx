@@ -271,7 +271,7 @@ const HowItWorksSection = () => {
             O sistema faz TODO o trabalho pesado.<br />
             Você só aparece para a parte boa: <span className="text-warning">fechar o cliente</span>.
           </p>
-          <div className="w-full sm:w-auto">
+          <div className="flex justify-center">
             <a
               href={WHATSAPP_CONFIG.getLink('default')}
               target="_blank"
