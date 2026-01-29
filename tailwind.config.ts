@@ -94,6 +94,10 @@ export default {
       backgroundImage: {
         "hero-gradient": "linear-gradient(135deg, hsl(var(--hero-gradient-start)) 0%, hsl(var(--hero-gradient-end)) 100%)",
       },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Lora', 'serif'],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

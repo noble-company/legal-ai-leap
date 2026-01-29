@@ -11,6 +11,7 @@ import FAQSection from "@/components/FAQSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
+import ROICalculator from "@/components/ROICalculator";
 
 const Index = () => {
   return (
@@ -19,13 +20,14 @@ const Index = () => {
         <HeroSection />
         <StatsSection />
         <PainPointsSection />
+        <ROICalculator />
         <SolutionPresentationSection />
         <ThreePillarsSection />
         <HowItWorksSection />
         <TangibleBenefitsSection />
         <SocialProofSection />
         <GuaranteesSection />
-        <FinalCTASection />
+
         <FAQSection />
         <Footer />
       </main>

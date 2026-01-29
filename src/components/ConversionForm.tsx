@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { WHATSAPP_CONFIG } from "@/lib/constants";
 import {
   Select,
   SelectContent,
@@ -50,8 +51,7 @@ const ConversionForm = ({ isOpen, onClose }: ConversionFormProps) => {
 
 Aguardo contato para agendar a demonstração!`;
 
-    const whatsappNumber = "5511999999999"; // Configure your number here
-    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappLink = `https://wa.me/${WHATSAPP_CONFIG.number}?text=${encodeURIComponent(message)}`;
     
     // Open WhatsApp in new tab
     window.open(whatsappLink, "_blank");
