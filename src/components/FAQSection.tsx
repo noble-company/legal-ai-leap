@@ -42,14 +42,9 @@ const FAQSection = () => {
         "Sim. Sem multa, sem burocracia, sem fidelidade. Você pode cancelar a qualquer momento com 30 dias de antecedência. Mas honestamente? Depois que você ver os resultados, não vai querer cancelar.",
     },
     {
-      question: "Vocês atendem apenas 5 escritórios/mês. Por quê?",
-      answer:
-        "Porque cada implementação leva 7 dias de dedicação quase exclusiva do nosso time técnico. Não fazemos implementação 'meia-boca'. Cada cliente recebe atenção total para garantir que o sistema funcione perfeitamente. Nossa capacidade atual é de 5 clientes/mês. Se as vagas fecharem, próxima turma só no mês seguinte.",
-    },
-    {
       question: "Como sei que vou ter suporte quando precisar?",
       answer:
-        "Garantia #3: Se não resolvermos seu problema em 24h, aquele mês sai grátis. Além disso: WhatsApp direto com o time técnico, Suporte prioritário nos primeiros 60 dias, Acompanhamento semanal de performance, Resposta em até 2 horas úteis. Não deixamos ninguém na mão.",
+        "Garantia #3: Se não resolvermos seu problema em 72 horas úteis, aquele mês sai grátis. Além disso: WhatsApp direto com o time técnico, Suporte prioritário nos primeiros 60 dias, Acompanhamento semanal de performance, Resposta em até 2 horas úteis. Não deixamos ninguém na mão.",
     },
   ];
 
@@ -101,13 +96,13 @@ const FAQSection = () => {
                   value={`item-${index}`}
                   className="glass-effect group overflow-hidden rounded-lg border border-primary/20 bg-white/95 px-6 shadow-lg backdrop-blur-sm transition-all hover:border-primary/40 hover:shadow-xl"
                 >
-                  <AccordionTrigger className="text-left text-lg font-semibold text-gray-900 transition-colors hover:text-noble-purple hover:no-underline">
+                  <AccordionTrigger className="text-left text-lg font-semibold text-gray-200 transition-colors hover:text-accent hover:no-underline">
                     <span className="flex items-start gap-3">
                       <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary transition-transform group-hover:scale-110" />
                       {faq.question}
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="pb-4 pl-8 pt-2 text-base leading-relaxed text-gray-700">
+                  <AccordionContent className="pb-4 pl-8 pt-2 text-base leading-relaxed text-gray-300">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -128,7 +123,7 @@ const FAQSection = () => {
             <h3 className="mb-4 text-2xl font-bold text-white md:text-3xl">
               Ainda tem dúvidas?
             </h3>
-            <p className="mb-6 text-lg text-gray-200">
+            <p className="mb-6 text-lg text-gray-100">
               Fale direto com nosso time no WhatsApp. Respondemos em minutos.
             </p>
             <motion.div

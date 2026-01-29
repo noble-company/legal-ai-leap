@@ -120,19 +120,19 @@ const GuaranteesSection = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="mb-4 text-center text-xl font-bold text-gray-900">
+                  <h3 className="mb-4 text-center text-2xl font-bold text-gray-200">
                     <span className={guarantee.color}>GARANTIA #{guarantee.number}:</span>
                     <br />
                     {guarantee.title}
                   </h3>
 
                   {/* Text */}
-                  <p className="mb-4 text-center text-base leading-relaxed text-gray-700">
+                  <p className="mb-4 text-center text-lg leading-relaxed text-gray-300">
                     {guarantee.text}
                   </p>
 
                   {/* Subtext */}
-                  <p className={`text-center text-sm font-semibold italic ${guarantee.color}`}>
+                  <p className={`text-center text-base font-semibold italic ${guarantee.color}`}>
                     {guarantee.subtext}
                   </p>
                 </div>
@@ -155,7 +155,7 @@ const GuaranteesSection = () => {
               POR QUE OFERECEMOS ISSO?
             </h3>
           </div>
-          <p className="mb-0 text-center text-lg leading-relaxed text-gray-200">
+          <p className="mb-0 text-center text-lg leading-relaxed text-white">
             Porque sabemos que funciona. Já vimos dezenas de escritórios
             aumentarem conversão, recuperarem tempo e captarem mais clientes. Se
             não funcionar para você (o que é extremamente raro), não queremos

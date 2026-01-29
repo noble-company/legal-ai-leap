@@ -27,7 +27,7 @@ const Index = () => {
         <TangibleBenefitsSection />
         <SocialProofSection />
         <GuaranteesSection />
-        <FinalCTASection />
+
         <FAQSection />
         <Footer />
       </main>

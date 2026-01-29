@@ -9,7 +9,7 @@ const TangibleBenefitsSection = () => {
       icon: TrendingUp,
       title: "MAIS CLIENTES",
       items: [
-        "Taxa de conversão sobe 40-60%",
+        "Taxa de conversão sobe 20-40%",
         "Cada lead vira oportunidade real",
         "Qualificação automática = menos perda",
       ],
@@ -70,9 +70,9 @@ const TangibleBenefitsSection = () => {
   ];
 
   const afterData = [
-    { label: "Conversão", value: "40-60%", color: "text-success" },
+    { label: "Conversão", value: "20-40%", color: "text-success" },
     { label: "Tempo/Lead", value: "0min", color: "text-success" },
-    { label: "Leads Perdidos", value: "5-10%", color: "text-success" },
+    { label: "Leads Perdidos", value: "0%", color: "text-success" },
     { label: "Custo Operacional", value: "Mínimo", color: "text-success" },
   ];
 
@@ -222,7 +222,7 @@ const TangibleBenefitsSection = () => {
           transition={{ duration: 0.6 }}
           className="mx-auto max-w-4xl rounded-3xl bg-gradient-noble p-8 text-center shadow-2xl border-4 border-white/10 md:p-12"
         >
-          <p className="text-2xl font-black text-white md:text-3xl lg:text-4xl mb-8">
+          <p className="text-2xl font-black text-black md:text-3xl lg:text-4xl mb-8">
             <span className="text-success">Resultado:</span> +250% de conversão | +R$ 420k/ano | <span className="text-warning">15 horas/semana</span> recuperadas
           </p>
           <WhatsAppCTAButton 
